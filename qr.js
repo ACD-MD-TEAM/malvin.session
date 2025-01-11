@@ -60,32 +60,26 @@ router.get('/', async (req, res) => {
 	
 				   let MALVIN_KING_TEXT = `
 ┏━━━━━━━━━━━━━━
-┃ᴍᴀʟᴠɪɴ-ᴍᴅ SESSION IS 
+┃ACD-MD-V2 SESSION IS 
 ┃SUCCESSFULLY
 ┃CONNECTED ✅🔥
 ┗━━━━━━━━━━━━━━━
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❶ || Creator = 𖥘⚡ ᴍᴀʟᴠɪɴ-ᴋɪɴɢ ⚡𖥘
+❶ || Creator = 𖥘⚡ DARK TECH ZONE ⚡𖥘
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❷ || https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
+❷ || https://whatsapp.com/channel/0029VawxBmHFnSzBLlIQ3y1e
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❸ || Owner = https://wa.me/263780166288
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❺ || Bot Repo = https://github.com/kingmalvn/RAVENS-MD
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❻ || YouTube = https://www.youtube.com/@MalvinKing_TECH 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-©2024-2099 ᴍᴀʟᴠɪɴ-ᴋɪɴɢ_`
-	 await Qr_Code_By_Malvin_King.sendMessage(Qr_Code_By_Malvin_King.user.id,{text:MALVIN_KING_TEXT},{quoted:session})
+©2024-2099 ᴅᴀʀᴋ ᴛᴇᴄʜ ᴢᴏɴᴇ
+	 await Qr_Code_By_Acd_Md.sendMessage(Qr_Code_By_Acd_Md.user.id,{text:ACD_MD_TEXT},{quoted:session})
 
 
 
 					await delay(100);
-					await Qr_Code_By_Malvin_King.ws.close();
+					await Qr_Code_By_Acd_Md.ws.close();
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					MALVIN_KING_QR_CODE();
+					ACD_MD_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -98,6 +92,6 @@ router.get('/', async (req, res) => {
 			await removeFile("temp/" + id);
 		}
 	}
-	return await MALVIN_KING_QR_CODE()
+	return await ACD_MD_QR_CODE()
 });
 module.exports = router
