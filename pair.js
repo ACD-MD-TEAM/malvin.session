@@ -6,7 +6,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-    default: Malvin_King,    useMultiFileAuthState,
+    default: Acd_Md,    useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
     Browsers
@@ -19,13 +19,13 @@ function removeFile(FilePath){
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-        async function MALVIN_KING_PAIR_CODE() {
+        async function ACD_MD_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_Malvin_King = Malvin_King({
+            let Pair_Code_By_Acd_Md = Acd_Md({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
              if(!Pair_Code_By_Malvin_King.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_Malvin_King.requestPairingCode(num)
+                            const code = await Pair_Code_By_Acd_Md.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
@@ -53,35 +53,29 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(800);
                let b64data = Buffer.from(data).toString('base64');
-               let session = await Pair_Code_By_Malvin_King.sendMessage(Pair_Code_By_Malvin_King.user.id, { text: '' + b64data });
+               let session = await Pair_Code_By_Acd_Md.sendMessage(Pair_Code_By_Acd_Md.user.id, { text: '' + b64data });
 
-               let MALVIN_KING_TEXT = `
+               let ACD_MD_TEXT = `
 ┏━━━━━━━━━━━━━━
-┃ᴍᴀʟᴠɪɴ-ᴍᴅ SESSION IS 
+┃ACD-MD-V2 SESSION IS 
 ┃SUCCESSFULLY
 ┃CONNECTED ✅🔥
 ┗━━━━━━━━━━━━━━━
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❶ || Creator = 𖥘⚡ ᴍᴀʟᴠɪɴ-ᴋɪɴɢ ⚡𖥘
+❶ || Creator = 𖥘⚡ DARK TECH ZONE ⚡𖥘
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❷ || https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
+❷ || https://whatsapp.com/channel/0029VawxBmHFnSzBLlIQ3y1e
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❸ || Owner = https://wa.me/263780166288
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❺ || Bot Repo = https://github.com/kingmalvn/LORD-MD 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❻ || YouTube = https://www.youtube.com/@malvintech2 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-©2024-2099 ᴍᴀʟᴠɪɴ-ᴋɪɴɢ_`
- await Pair_Code_By_Malvin_King.sendMessage(Pair_Code_By_Malvin_King.user.id,{text:MALVIN_KING_TEXT},{quoted:session})
+©2024-2099 ᴅᴀʀᴋ ᴛᴇᴄʜ ᴢᴏɴᴇ
+ await Pair_Code_By_Acd_Md.sendMessage(Pair_Code_By_Acd_Md.user.id,{text:ACD_MD_TEXT},{quoted:session})
  
 
         await delay(100);
-        await Pair_Code_By_Malvin_King.ws.close();
+        await Pair_Code_By_Acd_Md.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    MALVIN_KING_PAIR_CODE();
+                    ACD_MD_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -92,6 +86,6 @@ router.get('/', async (req, res) => {
          }
         }
     }
-    return await MALVIN_KING_PAIR_CODE()
+    return await ACD_MD_PAIR_CODE()
 });
 module.exports = router
